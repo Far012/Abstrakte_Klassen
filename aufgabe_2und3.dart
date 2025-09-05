@@ -9,7 +9,7 @@ abstract class DatabaseRepository {
   void delete(HomeworkDetails details);
 }
 
-class HomeworkDetailsDatabaseRepository implements DatabaseRepository {
+class MockHomeworkDetailsDatabaseRepository implements DatabaseRepository {
   final List<HomeworkDetails> homeworkDetails = [];
 
   @override
