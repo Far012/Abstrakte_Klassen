@@ -25,7 +25,7 @@ class MockHomeworkDetailsDatabaseRepository implements DatabaseRepository {
 
   @override
   void update(HomeworkDetails details) {
-    int index = homeworkDetails.indexWhere((d) => d.homeworkId == details.homeworkId);
+    int index = homeworkDetails.indexWhere((d) => details.homeworkId == details.homeworkId);
     if (index != -1) {
       homeworkDetails[index] = details;
       print("Aufgabe aktualisiert: ${details.title}");
@@ -36,7 +36,7 @@ class MockHomeworkDetailsDatabaseRepository implements DatabaseRepository {
 
   @override
   void delete(HomeworkDetails details) {
-    homeworkDetails.removeWhere((d) => d.homeworkId == details.homeworkId);
+    homeworkDetails.removeWhere((d) => details.homeworkId == details.homeworkId); 
     print("Aufgabe gelöscht: ${details.title}");
   }
 }
